@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="./assets/css/reset.css" />
+    <link rel="stylesheet" href="./assets/css/root.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/lib/modal.css" />
+    <link rel="stylesheet" href="style.css" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <!-- Google Fontsの読み込み -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <!-- Google Material Icon -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="modal">
+      <div class="overlay"></div>
+      <div class="center">
+        <div class="modalContent" data-modal="openInNew">
+          <button type="button" class="btn-closeModal icn icn-close"></button>
+          <p>新しいタブで開きます</p>
+          <a href="" class="btn-primary link-confirm w-100" target="_blank"
+            >開く</a
+          >
+        </div>
+      </div>
+    </div>
+    <div class="pageContent">
+      <main>
+        <div class="contentBody">
+          <section>
+            <ul class="list-1">
+              <div class="list-item">
+                <a href="" class="list-item-inner">
+                  <div class="imgBox">
+                    <img
+                      src="https://sprofile.line-scdn.net/0hUaYsb5dHCk50Choi0nR0MQRaCSRXe1NcCGlAIUYDBnodbR9IUWlAehJfBHodaEQRCGhEIBMOUn14GX0oalz2enM6V39IPUQdWW1Cqw"
+                      alt="ユーザーのプロフィール画像"
+                    />
+                  </div>
+                  <div class="txtBox">
+                    <p class="title">こころ</p>
+                    <p class="badge badge-small">謎探し中</p>
+                  </div>
+                </a>
+              </div>
+            </ul>
+          </section>
+        </div>
+      </main>
+    </div>
+    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/lib/modal.js"></script>
+  </body>
+</html>

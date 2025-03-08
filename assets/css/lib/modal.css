@@ -1,0 +1,101 @@
+#modal {
+  height: 100dvh;
+  width: 100dvw;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+  z-index: 100;
+
+  &.is-active {
+    visibility: visible;
+  }
+
+  .overlay {
+    background-color: var(--bgc-overlay);
+    height: 100dvh;
+    width: 100dvw;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+  }
+
+  .center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    visibility: hidden;
+
+    .modalContent {
+      background-color: #fff;
+      border-radius: 0.4rem;
+      height: fit-content;
+      width: min(calc(100% - 3.2rem), calc(var(--w-pc) - 3.2rem));
+      max-height: 90%;
+      overflow: hidden auto;
+      padding: 1.6rem;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      visibility: hidden;
+      z-index: 101;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+      &.is-show {
+        visibility: visible;
+      }
+      > * {
+        &:not(:last-child) {
+          margin-bottom: var(--gutter);
+        }
+      }
+      .btn-closeModal.icn-close {
+        margin-left: auto;
+      }
+      .container {
+        > *:not(:last-child) {
+          margin-bottom: calc(var(--gutter) / 2);
+        }
+      }
+    }
+  }
+  .bottom {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    visibility: hidden;
+    z-index: 101;
+
+    .modalContent {
+      background-color: #fff;
+      border-top-right-radius: 1.6rem;
+      border-top-left-radius: 1.6rem;
+      height: 100%;
+      width: min(100dvw, var(--w-pc));
+      max-height: 90dvh;
+      overflow: hidden auto;
+      padding: 3.2rem 1.6rem calc(3.2rem + env(safe-area-inset-bottom));
+      transform: translate(0, 100%);
+      transition: all 0.4s;
+      position: relative;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      &.is-show {
+        transform: none !important;
+        visibility: visible;
+      }
+    }
+  }
+}

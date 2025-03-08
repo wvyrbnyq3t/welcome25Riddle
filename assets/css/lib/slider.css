@@ -1,0 +1,113 @@
+#slider {
+  height: 100dvh;
+  width: min(100dvw, var(--w-pc));
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  visibility: hidden;
+  z-index: 100;
+
+  .sliderContent {
+    background-color: #fff;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    transform: translate(100%, 0);
+    transition: all 0.4s;
+    visibility: hidden;
+
+    &.is-show {
+      transform: none !important;
+      visibility: visible;
+    }
+
+    .sliderContentHeader {
+      display: flex;
+      align-items: center;
+      padding: 1.6rem;
+      position: fixed;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, 0);
+      width: 100%;
+      z-index: 101;
+
+      .btn-closeSlider {
+        display: block;
+        height: 2.4rem;
+        width: 2.4rem;
+        overflow: hidden;
+        position: relative;
+
+        &::before {
+          color: var(--c-primary);
+          content: "\e5e0";
+          font-family: "Material Symbols Outlined";
+          font-weight: normal;
+          font-style: normal;
+          font-size: 24px; /* Preferred icon size */
+          display: inline-block;
+          line-height: 1;
+          text-transform: none;
+          letter-spacing: normal;
+          word-wrap: normal;
+          white-space: nowrap;
+          direction: ltr;
+
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+      .title {
+        font-size: 1.6rem;
+        font-weight: 700;
+        text-align: center;
+        width: 100%;
+      }
+    }
+    .sliderContentBody {
+      height: 100%;
+      overflow: hidden auto;
+
+      section {
+        padding: 0 var(--gutter);
+        &:not(:last-child) {
+          margin-bottom: var(--gutter);
+        }
+      }
+    }
+    .sliderContentFooter {
+      background-color: #fff;
+      padding: var(--gutter);
+      position: sticky;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      z-index: 110;
+    }
+  }
+  .sliderContent-bottom {
+    transform: translate(0, 100%);
+    position: relative;
+
+    .sliderContentHeader {
+      background-color: #fff;
+      position: sticky;
+      top: 0;
+      left: 0;
+      transform: translate(0, 0);
+      width: 100%;
+      z-index: 101;
+
+      .btn-closeSlider {
+        &::before {
+          content: "\e5cd";
+        }
+      }
+    }
+  }
+}
