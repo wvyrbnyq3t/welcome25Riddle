@@ -102,13 +102,15 @@ body {
 }
 
 .btn-icn {
-  padding-right: 3.5em !important;
+  display: block;
+  margin: 0 auto;
   position: relative;
   &::before {
+    color: var(--c-primary);
     font-family: "Material Symbols Outlined";
     font-weight: normal;
     font-style: normal;
-    font-size: 1.5em; /* Preferred icon size */
+    font-size: 3em;
     display: inline-block;
     line-height: 1;
     text-transform: none;
@@ -116,16 +118,27 @@ body {
     word-wrap: normal;
     white-space: nowrap;
     direction: ltr;
-
     position: absolute;
-    top: 50%;
-    right: 1em;
-    transform: translate(0, -50%);
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+
+  span {
+    font-size: 0.9em;
+    display: block;
+    width: 100%;
+    padding-top: 3.75em;
   }
 }
-.btn-icn-openInNew {
+.btn-icn-map {
   &::before {
-    content: "\e89e";
+    content: "\e55b";
+  }
+}
+.btn-icn-qrCode {
+  &::before {
+    content: "\ef6b";
   }
 }
 
@@ -168,6 +181,12 @@ body {
   display: grid;
   gap: var(--gutter);
   grid-template-columns: repeat(2, 1fr);
+
+  &.divider-side {
+    .column-item:first-child {
+      border-right: 0.1rem solid var(--c-gray);
+    }
+  }
 }
 
 /* divider */
