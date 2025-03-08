@@ -64,6 +64,9 @@ body {
   padding: 0.5em 2em;
   width: fit-content;
 }
+.badge-small {
+  padding: 0.25em 2em;
+}
 
 /* button styl */
 .btn-primary {
